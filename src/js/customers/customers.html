@@ -1,0 +1,33 @@
+<div class="maincontent">
+
+    <div class="row">
+        <div class="col-xs-4">
+            <input type="text" ng-model="searchText" class="form-control" placeholder="Search for customers...">
+        </div>
+
+        <div class="col-xs-4">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn" ng-class="{'btn-success': vw.cards, 'btn-default': !vw.cards}" ng-click="toggle()">Card View</button>
+                <button type="button" class="btn" ng-class="{'btn-default': vw.cards, 'btn-success': !vw.cards}" ng-click="toggle()">List View</button>
+            </div>
+        </div>
+
+        <div>
+            <button type="button" class="btn btn-primary" ng-click="addCustomer()"><span class='glyphicon glyphicon-plus'></span> Add Customer</button>
+    </div>
+        
+    </div>
+    <br/>
+    <!-- CARD VIEW -->
+    <div class="row" ng-if="vw.cards">
+        <div ng-repeat="customer in customers | filter:searchText" class="col-xs-3">
+            <usercard></usercard>
+        </div>
+    </div>
+
+    <!-- LIST VIEW -->
+    <div class="row" ng-if="!vw.cards">
+        <customerlist></customerlist>
+    </div>
+
+</div>

@@ -1,0 +1,30 @@
+<table class="table table-striped">
+    <tr>
+        <th class="text-center">S.No</th>
+        <th class="text-center">Full Name</th>
+        <th class="text-center">Address</th>
+        <th class="text-center">City</th>
+        <th class="text-center">Zip Code</th>
+        <th class="text-center">Website</th>
+        <th class="text-center">Delete</th>
+        <th class="text-center">Edit</th>
+    </tr>
+    <tr ng-repeat="customer in customers | filter:searchText">
+        <td>{{$index + 1}}.</td>
+        <td>{{customer.name}}, {{customer.username}}</td>
+        <td>{{customer.address.street}} {{customer.address.suite}}</td>
+        <td>{{customer.address.city}}</td>
+        <td>{{customer.address.zipcode}}</td>
+        <td>{{customer.website}}</td>
+        <td>
+            <button type="button" class="btn btn-danger" ng-click="remove(customer)">
+                <span class="glyphicon glyphicon-trash" />
+            </button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-warning" ng-click="edit(customer)">
+                <span class="glyphicon glyphicon-edit" />
+            </button>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,18 @@
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <div class="row">
+            <span class="col-xs-8 panel-title text-left">{{customer.name}}, {{customer.username}}</span>
+            <div class="col-xs-2 text-right">
+                <span class='glyphicon glyphicon-edit' ng-click="edit(customer)"></span>
+            </div>
+            <div class="col-xs-2 text-right">
+                <span class='glyphicon glyphicon-remove' ng-click="remove(customer)"></span>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body text-left">
+        <div>{{customer.address.street}} {{customer.address.suite}}</div>
+        <div>{{customer.address.city}}</div>
+        <div>{{customer.website}} - {{customer.address.zipcode}}</div>
+    </div>
+</div>
